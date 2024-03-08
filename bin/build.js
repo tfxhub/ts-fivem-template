@@ -145,5 +145,7 @@ await exec('node ./bin/clear.js');
 
 await build();
 
-console.log('\nGenerating types...\n');
-await exec('node ./bin/types.js');
+if (production) {
+    console.log('\nGenerating types...\n');
+    await exec('node ./bin/types.js');
+}
