@@ -1,0 +1,26 @@
+{
+  "name": "ts-fivem-template",
+  "version": "1.0.0",
+  "description": "TypeScript template for FX resources.",
+  "author": "ianram0s",
+  "license": "MIT",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16.9.1"
+  },
+  "scripts": {
+    "dev": "node ./bin/build.js",
+    "build": "node ./bin/build.js --mode=production",
+    "types": "node ./bin/types.js",
+    "clear":  "node ./bin/clear.js"
+  },
+  "devDependencies": {
+    "@citizenfx/client": "latest",
+    "@citizenfx/server": "latest",
+    "@types/node": "^20.11.25",
+    "esbuild": "^0.20.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  }
+}
