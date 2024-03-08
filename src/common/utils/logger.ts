@@ -1,4 +1,4 @@
-import { isDev } from './fivem';
+import { isDev } from './env';
 
 export enum LogLevel {
     error = 0,
