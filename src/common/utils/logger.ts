@@ -44,7 +44,7 @@ class Logger {
     private log(level: LogLevel, ...message: any[]) {
         if (level <= this.level) {
             const formattedMessage = message.map((m) => this.formatMessage(m)).join(' ');
-            console.log(colors[level], formattedMessage);
+            console.log(colors[level], formattedMessage, colors[LogLevel.trace]);
         }
     }
 
