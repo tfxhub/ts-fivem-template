@@ -23,7 +23,7 @@ async function build() {
                         build.onEnd((result) => {
                             const status = count === 0 ? 'built' : 'rebuilt';
                             const message =
-                                result.errors.length === 0 ? `files ${status} successfully.` : `${status} with issues.`;
+                                result.errors.length === 0 ? `files ${status} successfully.` : `${status} failed.`;
                             console.log(`${context.name.charAt(0).toUpperCase() + context.name.slice(1)} ${message}`);
                             count++;
 
@@ -77,18 +77,30 @@ async function generateFxManifest() {
         if (Array.isArray(value)) {
             fxManifest += `${key} {\n`;
             value.forEach((item, index) => {
-                fxManifest += index === value.length - 1 ? `\t'${item}'\n` : `'${item}',\n`;
+                fxManifest += `\t'${item}'${index === value.length - 1 ? '\n' : ',\n'}`;
             });
             fxManifest += '}\n';
+        } else if (typeof value === 'object' && value !== null) {
+            Object.entries(value).forEach(([subKey, subValue]) => {
+                fxManifest += `${key} '${subKey}' {\n`;
+                if (typeof subValue === 'object') {
+                    Object.entries(subValue).forEach(([innerKey, innerValue]) => {
+                        fxManifest += `\t${innerKey} = '${innerValue}'\n`;
+                    });
+                } else {
+                    fxManifest += `\t${subKey} = '${subValue}'\n`;
+                }
+                fxManifest += '}\n';
+            });
         } else {
             fxManifest += `${key} '${value}'\n`;
         }
     });
 
-    writeFile('fxmanifest.lua', fxManifest);
+    await writeFile('fxmanifest.lua', fxManifest);
 
     // FXServer won't attempt to rebuild files by writing this.
-    writeFile(
+    await writeFile(
         '.yarn.installed',
         new Date().toLocaleString('en-US', {
             timeZone: 'UTC',
@@ -117,7 +129,6 @@ const srcPath = 'src';
 const distPath = 'dist';
 
 const production = process.argv.findIndex((argItem) => argItem === '--mode=production') >= 0;
-
 
 /**
  * Building options of each target build.
