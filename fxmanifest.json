@@ -3,10 +3,5 @@
     "game": ["gta5"],
     "client_script": "./dist/client.js",
     "server_script": "./dist/server.js",
-    "env": "dev",
-    "resource_type": {
-        "gametype": {
-            "name": "Example Gamemode"
-        }
-    }
+    "env": "dev"
 }
