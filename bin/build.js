@@ -138,7 +138,7 @@ const contexts = [
         name: 'server',
         buildOptions: {
             platform: 'node',
-            target: ['node16'],
+            target: ['node22'],
             format: 'cjs',
         },
     },
