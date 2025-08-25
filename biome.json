@@ -1,0 +1,77 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+    "files": {
+        "includes": ["src/client/**/*.ts", "src/common/**/*.ts", "src/server/**/*.ts", "!**/*.d.ts"],
+        "ignoreUnknown": false
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "suspicious": {
+                "noConfusingLabels": "off",
+                "noAssignInExpressions": "off",
+                "noExplicitAny": "off",
+                "noFallthroughSwitchClause": "off",
+                "noGlobalIsNan": "off",
+                "noControlCharactersInRegex": "off"
+            },
+            "correctness": {
+                "noUnusedLabels": "off",
+                "noVoidTypeReturn": "off"
+            },
+            "style": {
+                "useEnumInitializers": "off",
+                "noNonNullAssertion": "off",
+                "noParameterAssign": "off",
+                "noUnusedTemplateLiteral": {
+                    "fix": "safe"
+                }
+            },
+            "performance": {
+                "noDelete": "off"
+            },
+            "complexity": {
+                "noForEach": "off",
+                "noUselessConstructor": "off",
+                "noStaticOnlyClass": "off",
+                "noThisInStatic": "off",
+                "noArguments": "off"
+            }
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "formatWithErrors": false,
+        "includes": ["**"],
+        "attributePosition": "auto",
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "lineEnding": "lf"
+    },
+    "javascript": {
+        "formatter": {
+            "arrowParentheses": "always",
+            "bracketSameLine": false,
+            "bracketSpacing": true,
+            "jsxQuoteStyle": "single",
+            "quoteProperties": "asNeeded",
+            "quoteStyle": "single",
+            "semicolons": "always",
+            "trailingCommas": "all"
+        }
+    },
+    "json": {
+        "formatter": {
+            "trailingCommas": "none"
+        }
+    },
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "source": {
+                "organizeImports": "on"
+            }
+        }
+    }
+}

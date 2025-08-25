@@ -146,8 +146,8 @@ const contexts = [
         name: 'client',
         buildOptions: {
             platform: 'browser',
-            target: ['es2021'],
-            format: 'cjs',
+            target: ['es2023'],
+            format: 'iife',
         },
     },
 ];

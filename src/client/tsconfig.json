@@ -14,8 +14,7 @@
       "@@/*": ["../../*"]
     },
     "types": [
-      "@citizenfx/client",
-      "@types/node"
+      "@citizenfx/client"
     ]
   },
   "include": [

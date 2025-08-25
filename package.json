@@ -1,26 +1,33 @@
 {
   "name": "ts-fivem-template",
   "version": "1.0.0",
-  "description": "TypeScript template for FX resources.",
   "author": "ianram0s",
-  "license": "MIT",
   "main": "index.js",
-  "type": "module",
-  "engines": {
-    "node": ">=22.10.0"
-  },
-  "scripts": {
-    "dev": "node ./bin/build.js",
-    "build": "node ./bin/build.js --mode=production",
-    "types": "node ./bin/types.js",
-    "clear":  "node ./bin/clear.js"
-  },
   "devDependencies": {
+    "@biomejs/biome": "2.2.2",
     "@citizenfx/client": "latest",
     "@citizenfx/server": "latest",
     "@types/node": "^24.3.0",
     "esbuild": "^0.25.9",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2"
+  },
+  "description": "TypeScript template for FX resources.",
+  "engines": {
+    "node": ">=22.10.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "bun ./bin/build.js",
+    "build": "bun ./bin/build.js --mode=production",
+    "types": "bun ./bin/types.js",
+    "clear": "bun ./bin/clear.js",
+    "format": "bun run biome format --write",
+    "lint": "bun run biome lint --write"
+  },
+  "type": "module",
+  "dependencies": {
+    "@nativewrappers/fivem": "^0.0.128",
+    "@nativewrappers/server": "^0.0.128"
   }
 }
