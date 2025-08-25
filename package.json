@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "bun ./bin/build.js",
-    "build": "bun ./bin/build.js --mode=production",
-    "types": "bun ./bin/types.js",
-    "clear": "bun ./bin/clear.js",
+    "dev": "bun ./bin/build.ts",
+    "build": "bun ./bin/build.ts --mode=production",
+    "types": "bun ./bin/types.ts",
+    "clear": "bun ./bin/clear.ts",
     "format": "bun run biome format --write",
     "lint": "bun run biome lint --write"
   },

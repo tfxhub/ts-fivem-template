@@ -52,7 +52,7 @@ For installation guide, visit [bun.sh](https://bun.sh/docs/installation).
 ## Usage
 
 - **Development**: Run `bun dev` to start the development build with watch mode (automatic build on file changes).
-- **Production Build**: Run `bun build` to compile your resources for production use, optimizing for performance.
+- **Production Build**: Run `bun run build` to compile your resources for production use, optimizing for performance.
 - **Type Generation**: Run `bun types` to generate TS declaration files (.d.ts) inside ./types directory.
 - **Clearing Build Files**: Use `bun clear` to remove all generated files, keeping your workspace clean when necessary.
 - **Linting**: Run `bun lint` to check and auto-fix code style issues.
