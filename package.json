@@ -7,9 +7,8 @@
     "@biomejs/biome": "2.2.2",
     "@citizenfx/client": "latest",
     "@citizenfx/server": "latest",
+    "@tfxhub/builder": "^1.0.2",
     "@types/node": "^24.3.0",
-    "esbuild": "^0.25.9",
-    "prettier": "^3.2.5",
     "typescript": "^5.4.2"
   },
   "description": "TypeScript template for FX resources.",
@@ -18,10 +17,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "bun ./bin/build.ts",
-    "build": "bun ./bin/build.ts --mode=production",
-    "types": "bun ./bin/types.ts",
-    "clear": "bun ./bin/clear.ts",
+    "dev": "bun run tfxb build",
+    "build": "bun run tfxb build --production",
+    "types": "bun run tfxb types",
+    "clear": "bun run tfxb clear",
     "format": "bun run biome format --write",
     "lint": "bun run biome lint --write"
   },

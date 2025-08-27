@@ -1,6 +1,7 @@
 node_modules
 dist
-types
+types 
+packages
 fxmanifest.lua
 .yarn.installed
 pnpm-lock.yaml
